@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9" style="margin-top: 70px;">
+      <% if notice %>
+        <p id="notice"><%= notice %></p>
+      <% end %>
+      <%= image_tag('book.png') %>
+      <p>
+        <h3>
+          <%= @job.title %>
+        </h3>
+      </p>
+      <p>
+        <h4>
+          <%= @job.city %>
+        </h4>
+      </p>
+      <p>
+        <%= @job.description %>
+      </p>
+      <p>
+        <strong>Company:</strong>
+        <% @job.company %>
+      </p>
+    </div>
+  </div>
+  <%= link_to 'Back', jobs_path %>
+</div>

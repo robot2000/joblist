@@ -18,7 +18,7 @@ end
 
 def generate_jobs(n)
   n.times do
-    job = Job.new(title: Faker::Company.profession, city: Faker::Address.city, description: Faker::Hipster.paragraph)
+    job = Job.new(title: Faker::Company.profession, city: Faker::Address.city, description: Faker::Lorem.paragraph)
     rand(1..5).times do
       Company.find(rand(Company.ids.sort.first..Company.ids.sort.last)).jobs << job
     end

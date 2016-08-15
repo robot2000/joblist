@@ -7,7 +7,10 @@ class CompaniesController < ApplicationController
   end
   
   def show
-    book = Company.find(params[:id])
+    # @company = Company.find(params[:id])
+
+    @companies = Company.all
+    @jobs = @company.jobs
   end
   
   def new

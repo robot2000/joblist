@@ -13,6 +13,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pg'
 gem 'kaminari'
 
+gem 'bootstrap-sass', '~> 3.3.6'
+
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
