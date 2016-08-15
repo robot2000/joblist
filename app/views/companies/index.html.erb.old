@@ -1,0 +1,8 @@
+<div class="col-md-3" style="margin-top: 80px;">
+    <p class="lead"><%= t('company') %></p>
+    <div class="list-group">
+      <% @companies.each do |company| %>
+        <%= link_to company.name, company, class: "list-group-item" %></a>
+      <% end %>
+    </div>
+</div>

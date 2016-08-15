@@ -1,8 +1,29 @@
-<div class="col-md-3" style="margin-top: 80px;">
-    <p class="lead"><%= t('company') %></p>
-    <div class="list-group">
-      <% @companies.each do |company| %>
-        <%= link_to company.name, company, class: "list-group-item" %></a>
-      <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-top: 80px;">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Company name</th>
+            <th>Vacancies count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @companies.each do |company| %>
+            <tr>
+              <td>
+                <h4><%= link_to %Q(#{company.name}), company %></h4>
+              </td>
+              <td>
+                <h4><%= company.jobs.count %></h4>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
+  </div>
+  <div class="text-center">
+    <%= paginate @companies %>
+  </div>
 </div>
