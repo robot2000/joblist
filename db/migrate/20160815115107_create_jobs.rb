@@ -5,6 +5,8 @@ class CreateJobs < ActiveRecord::Migration
       t.string :city
       t.text :description
 
+      t.references :company, index: true
+      
       t.timestamps null: false
     end
   end

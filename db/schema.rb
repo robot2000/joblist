@@ -27,8 +27,11 @@ ActiveRecord::Schema.define(version: 20160815115635) do
     t.string   "title",       limit: 255
     t.string   "city",        limit: 255
     t.text     "description", limit: 65535
+    t.integer  "company_id",  limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  add_index "jobs", ["company_id"], name: "index_jobs_on_company_id", using: :btree
 
 end
