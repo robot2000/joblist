@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   
   resources :jobs
   resources :companies, only: [:index, :show]
+
+  admin_only = ->(request) { request.env['warden'].user.try(:admin?) }
+
+  constraints admin_only do
+    mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  end 
 end

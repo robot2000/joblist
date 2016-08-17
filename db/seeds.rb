@@ -9,6 +9,7 @@ def generate_users(n)
     User.create!(email: Faker::Internet.email, password: '12345678', firstname: Faker::Name.first_name, lastname: Faker::Name.last_name, profession: Faker::Company.profession)
   end
   User.create!(email: 'admin@admin.com', password: 'adminadmin', firstname: 'admin', lastname: 'admin', admin: true)
+  User.create!(email: 'manager@manager.com', password: 'managermanager', firstname: 'manager', lastname: 'manager', manager: true)
 end
 
 def generate_companies(n)

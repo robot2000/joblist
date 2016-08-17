@@ -1,6 +1,9 @@
 class JobsController < ApplicationController
   
-  before_action :set_job, only: [:show, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
+  before_action :authorize,          except: [:index, :show]  # only admin can create new job
+  before_action :set_job,            only:   [:show, :destroy]
+
 
   def index
     @jobs = Job.all.page(params[:page]).per(9)
@@ -43,6 +46,10 @@ class JobsController < ApplicationController
   
   private
 
+  def authorize
+    redirect_to jobs_url, notice: "Access denied" unless current_user.try(:admin?)
+  end
+  
   def set_job
     @job = Job.find(params[:id])
   end

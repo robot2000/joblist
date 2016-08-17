@@ -20,7 +20,7 @@
       </p>
       <p>
         <strong>Company:</strong>
-        <% @job.company %>
+        <%= link_to @job.company.name, @job.company %>
       </p>
     </div>
   </div>
