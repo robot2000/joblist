@@ -47,7 +47,7 @@ class JobsController < ApplicationController
   private
 
   def authorize
-    redirect_to jobs_url, notice: "Access denied" unless current_user.try(:admin?)
+    redirect_to jobs_url, notice: "Access denied" unless current_user.try(:admin?) || current_user.try(:manager?)
   end
   
   def set_job

@@ -23,7 +23,17 @@ Things you may want to cover:
 
 Enjoy!
 
+DEMO version on HEROKU
+https://jobboardtest.herokuapp.com/
 
+ADMIN room
+https://jobboardtest.herokuapp.com/admin
+
+login: admin@admin.com
+pass: adminadmin
+
+login: manager@manager.com
+pass: managermanager
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
